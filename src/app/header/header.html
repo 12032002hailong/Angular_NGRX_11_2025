@@ -1,15 +1,54 @@
-<div class="header">
-  <div class="header-logo">
-    <h2>NG APP</h2>
+<header class="w-full bg-white shadow-sm px-8 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="text-2xl font-extrabold tracking-wide">
+      NG <span class="text-blue-600">APP</span>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 text-lg font-medium">
+      <a
+        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+      >
+        Home
+      </a>
+
+      <a
+        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+      >
+        Counter
+      </a>
+
+      <a
+        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+      >
+        Courses
+      </a>
+    </nav>
+
+    <!-- Desktop Auth -->
+    <div class="hidden md:flex items-center gap-5">
+      <a
+        class="no-underline hover:no-underline text-gray-700 hover:text-blue-600 transition-colors duration-200"
+      >
+        Login
+      </a>
+      <a
+        class="no-underline hover:no-underline text-gray-700 hover:text-blue-600 transition-colors duration-200"
+      >
+        Signup
+      </a>
+
+      <button
+        class="px-4 py-2 rounded-xl bg-red-500 text-white font-semibold shadow hover:bg-red-600 transition"
+      >
+        Logout
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-3xl text-gray-700 hover:text-blue-600 transition">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
-  <div class="header-links">
-    <a href="#">Home</a>
-    <a href="#">Counter</a>
-    <a href="#">Courses</a>
-  </div>
-  <div class="header-auth-links">
-    <a href="#">Login</a>
-    <a href="#">Signup</a>
-    <button class="logout-button">LogOut</button>
-  </div>
-</div>
+</header>
