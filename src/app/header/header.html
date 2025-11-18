@@ -8,19 +8,26 @@
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center gap-8 text-lg font-medium">
       <a
-        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+        class="cursor-pointer text-gray-700 hover:underline hover:text-blue-600 transition-colors duration-200"
+        routerLink="/"
+        routerLinkActive="text-blue-600 font-medium"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         Home
       </a>
 
       <a
-        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+        class="cursor-pointer text-gray-700 hover:underline hover:text-blue-600 transition-colors duration-200"
+        routerLink="/counter"
+        routerLinkActive="text-blue-600 font-medium"
       >
         Counter
       </a>
 
       <a
-        class="cursor-pointer no-underline hover:no-underline underline-offset-0 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+        class="cursor-pointer text-gray-700 hover:underline hover:text-blue-600 transition-colors duration-200"
+        routerLink="/courses"
+        routerLinkActive="text-blue-600 font-medium"
       >
         Courses
       </a>
@@ -28,16 +35,8 @@
 
     <!-- Desktop Auth -->
     <div class="hidden md:flex items-center gap-5">
-      <a
-        class="no-underline hover:no-underline text-gray-700 hover:text-blue-600 transition-colors duration-200"
-      >
-        Login
-      </a>
-      <a
-        class="no-underline hover:no-underline text-gray-700 hover:text-blue-600 transition-colors duration-200"
-      >
-        Signup
-      </a>
+      <button>Login</button>
+      <button>Sign Up</button>
 
       <button
         class="px-4 py-2 rounded-xl bg-red-500 text-white font-semibold shadow hover:bg-red-600 transition"
