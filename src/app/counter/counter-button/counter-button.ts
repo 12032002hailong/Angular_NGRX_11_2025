@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { decrement, increment, reset } from '../states/counter.actions';
 
 @Component({
   selector: 'app-counter-button',
@@ -7,19 +10,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './counter-button.scss',
 })
 export class CounterButton {
-  @Output() incrementClicked = new EventEmitter<void>();
-  @Output() decrementClicked = new EventEmitter<void>();
-  @Output() resetClicked = new EventEmitter<void>();
+  constructor(private store: Store<{ counter: number }>) {}
 
   OnIncrement() {
-    this.incrementClicked.emit();
+    this.store.dispatch(increment());
   }
 
   OnDecrement() {
-    this.decrementClicked.emit();
+    this.store.dispatch(decrement());
   }
 
   OnReset() {
-    this.resetClicked.emit();
+    this.store.dispatch(reset());
   }
 }
