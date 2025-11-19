@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-counter-value',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './counter-value.scss',
 })
 export class CounterValue {
-  countValue: number = 10;
+  @Input() counter: number = 10;
 }

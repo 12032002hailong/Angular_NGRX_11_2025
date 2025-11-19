@@ -1,4 +1,8 @@
 <div class="counter">
-  <app-counter-value></app-counter-value>
-  <app-counter-button></app-counter-button>
+  <app-counter-value [counter]="counter"></app-counter-value>
+  <app-counter-button
+    (incrementClicked)="incrementCount()"
+    (decrementClicked)="decrementCount()"
+    (resetClicked)="resetCount()"
+  ></app-counter-button>
 </div>
