@@ -1,10 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 
-export const increment = createAction('[Counter] increment');
-export const decrement = createAction('[Counter] decrement');
-export const reset = createAction('[Counter] reset');
-
+export const increment = createAction('[Counter] Increment');
+export const decrement = createAction('[Counter] Decrement');
+export const reset = createAction('[Counter] Reset');
 export const customIncrement = createAction(
   '[Counter] Custom Increment',
   props<{ value: number }>()
 );
+export const toggleCustomInput = createAction('[Counter] Toggle Custom Input');
