@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { CounterState } from '../states/counter.state';
+import { getCounter } from '../states/counter.selector';
 
 @Component({
   selector: 'app-counter-value',
@@ -14,8 +15,8 @@ export class CounterValue implements OnInit, OnDestroy {
   counter: number = 0;
   counterSubscription: Subscription | null = null;
   ngOnInit() {
-    this.counterSubscription = this.store.select('counter').subscribe((data) => {
-      this.counter = data.counter;
+    this.counterSubscription = this.store.select(getCounter).subscribe((count) => {
+      this.counter = count;
     });
   }
 

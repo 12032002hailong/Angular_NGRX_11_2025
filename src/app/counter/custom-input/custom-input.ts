@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { CounterState } from '../states/counter.state';
 import { customIncrement, toggleCustomInput } from '../states/counter.actions';
+import { getToggle } from '../states/counter.selector';
 
 @Component({
   selector: 'app-custom-input',
@@ -16,8 +17,8 @@ export class CustomInput implements OnInit {
   showCustomInput: boolean = false;
 
   ngOnInit() {
-    this.store.select('counter').subscribe((data) => {
-      this.showCustomInput = data.toggle;
+    this.store.select(getToggle).subscribe((toggle) => {
+      this.showCustomInput = toggle;
     });
   }
 
