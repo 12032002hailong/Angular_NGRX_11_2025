@@ -3,8 +3,14 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 import { provideState, provideStore } from '@ngrx/store';
 import { counterReducer } from './app/counter/states/counter.reducer';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 bootstrapApplication(App, {
   ...appConfig,
-  providers: [...appConfig.providers, provideStore(), provideState('counter', counterReducer)],
+  providers: [
+    ...appConfig.providers,
+    provideStore(),
+    provideState('counter', counterReducer),
+    provideStoreDevtools(),
+  ],
 });
