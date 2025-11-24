@@ -37,7 +37,11 @@
     </div>
   </div>
 
-  <div class="course-list-container row g-4">
-    <app-course-card></app-course-card>
+  <div class="row g-4">
+    @for (course of courses$ | async; track course.id) {
+    <div class="col-12 col-md-6 col-lg-4">
+      <app-course-card [course]="course"></app-course-card>
+    </div>
+    }
   </div>
 </div>

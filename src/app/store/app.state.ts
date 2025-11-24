@@ -2,10 +2,12 @@ import { EnvironmentProviders, makeEnvironmentProviders, Provider } from '@angul
 import { provideStore, provideState } from '@ngrx/store';
 import { counterReducer } from '../counter/states/counter.reducer';
 import { coursesReducer } from '../courses/state/courses.reducer';
+import { CounterState } from '../counter/states/counter.state';
+import { CoursesState } from '../courses/state/courses.state';
 
 export interface AppState {
-  counter: ReturnType<typeof counterReducer>;
-  courses: ReturnType<typeof coursesReducer>;
+  counter: CounterState;
+  courses: CoursesState;
 }
 
 export function provideAppStore() {
