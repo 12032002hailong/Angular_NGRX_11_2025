@@ -1,0 +1,67 @@
+.course-card-v2 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+
+  // Hiệu ứng hover nhẹ khi di chuột vào cả card
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  // Style cho phần header
+  .card-header {
+    background-color: #f8f9fa; // Màu nền xám nhẹ chuẩn bootstrap
+    h5 {
+      font-size: 1.1rem;
+    }
+  }
+
+  // Wrapper để cố định chiều cao ảnh
+  .card-img-wrapper {
+    height: 180px; // Chiều cao cố định
+    background-color: #f3f4f6;
+
+    img {
+      // object-fit-cover đã có ở HTML class,
+      // nhưng thêm ở đây để đảm bảo nếu lỡ xóa class HTML
+      object-fit: cover;
+    }
+  }
+
+  // Giới hạn số dòng mô tả (giữ nguyên từ code cũ)
+  .description-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // Giới hạn 3 dòng cho gọn
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+  }
+
+  // Style cho footer và các nút tròn
+  .card-footer {
+    // Custom style cho nút tròn
+    .btn-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%; // Làm tròn nút
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0; // Reset padding để icon nằm giữa
+      border: none;
+      transition: filter 0.2s;
+
+      // Icon bên trong nút
+      i {
+        font-size: 1rem;
+        line-height: 1;
+      }
+
+      // Hiệu ứng hover nút
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+}
