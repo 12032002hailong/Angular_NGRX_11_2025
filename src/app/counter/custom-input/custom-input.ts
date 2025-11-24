@@ -6,6 +6,7 @@ import { customIncrement, toggleCustomInput } from '../states/counter.actions';
 import { getToggle } from '../states/counter.selector';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { AppState } from '../../store/app.state';
 
 @Component({
   selector: 'app-custom-input',
@@ -14,7 +15,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './custom-input.scss',
 })
 export class CustomInput implements OnInit {
-  constructor(private store: Store<{ counter: CounterState }>) {}
+  constructor(private store: Store<AppState>) {}
   customValue = 0;
   showCustomInput$: Observable<boolean> | null = null;
 

@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { decrement, increment, reset } from '../states/counter.actions';
 import { CounterState } from '../states/counter.state';
+import { AppState } from '../../store/app.state';
 
 @Component({
   selector: 'app-counter-button',
@@ -11,7 +12,7 @@ import { CounterState } from '../states/counter.state';
   styleUrl: './counter-button.scss',
 })
 export class CounterButton {
-  constructor(private store: Store<{ counter: CounterState }>) {}
+  constructor(private store: Store<AppState>) {}
 
   OnIncrement() {
     this.store.dispatch(increment());
